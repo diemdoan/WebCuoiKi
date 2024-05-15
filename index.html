@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="menu_side">
+        <h1>PlayList</h1>
+        <div class="playlist">
+            <h4 class="active"><span></span><i class='bx bxs-music'></i> Playlist</h4>
+            <h4><span></span><i class='bx bxs-music'></i> Last Listening</h4>
+            <h4><span></span><i class='bx bxs-music'></i> Recommended</h4>
+        </div>
+        <div class="menu_song">
+            <li class="songIteam">
+                <span>01</span>
+                <img src="Img/Emiu.jpg" alt="Em iu">
+                <h5>
+                    Em Iu
+                    <div class="subtitle">Andree Right Hand, Wxrdie, Binh Gold</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="1"></i>
+                
+            </li>
+            <li class="songIteam">
+                <span>02</span>
+                <img src="Img/cry.jpg" alt="Cry">
+                <h5>
+                    Cry
+                    <div class="subtitle">Parker Jack</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="2"></i>
+                
+            </li>
+            <li class="songIteam">
+                <span>03</span>
+                <img src="Img/du.jpg" alt="Dù Con Đã Khôn Lớn">
+                <h5>
+                    Dù Con Đã Khôn Lớn
+                    <div class="subtitle">Yuno BigBoi x Tổng Đài</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="3"></i>
+                
+            </li><li class="songIteam">
+                <span>04</span>
+                <img src="Img/quasom.jpg" alt="Em iu">
+                <h5>
+                    Quá Sớm
+                    <div class="subtitle">Low G</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="4"></i>
+                
+            </li><li class="songIteam">
+                <span>05</span>
+                <img src="Img/roibo.jpg" alt="Em iu">
+                <h5>
+                    Rời Bỏ
+                    <div class="subtitle">Anh Tú</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="5"></i>
+                
+            </li><li class="songIteam">
+                <span>06</span>
+                <img src="Img/loinho.jpg" alt="Em iu">
+                <h5>
+                    Lối Nhỏ
+                    <div class="subtitle">Đen Vâu</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="6"></i>
+                
+            </li>
+        </div>
+    </div>
+
+    <div class="song_side">
+        <nav>
+            <ul>
+                <li>Discover<span></span></li>
+                <li>My Library</li>
+                <li>Home</li>
+            </ul>
+            <div class="search">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search Music...">
+            </div>
+            <div class="user">
+                <img src="Img/Emiu.jpg" alt="User" title="User">
+            </div>
+        </nav>
+        <div class="content">
+            <h1>NOTE</h1>
+            <p>
+                Tạm thời để yên dừng hoạt động 
+                <br>Làm dần dần rồi cũng xong t chưa hiểu phần cơ sở dữ liệu nên đang bị bí
+            </p>
+            <div class="buttons">
+                <button>PLAY</button>
+                <button>PLAY</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="master_play">
+        <div class="wave">
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+        </div>
+        <img src="Img/Emiu.jpg" alt="">
+        <h5>
+            Em Iu<br>
+            <div class="subtitle">Andree Right Hand, Wxrdie, Binh Gold</div>
+        </h5>
+        <div class="icon">
+            <i class='bx bx-skip-previous' ></i>
+            <i class='bx bx-play'></i>
+            <i class='bx bx-skip-next'></i>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+            <input type="range" id="seek" min="0" value="0" max="1:00">
+            <div class="bar2" id="bar2"></div>
+            <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:00</span>
+
+        <div class="vol">
+            <i class='bx bxs-volume-full' ></i>
+            <input type="range" id="vol" min="0" value="0" max="1:00">
+            <div class="vol_bar"></div>
+            <div class="dot" id="vol_dot"></div>
+        </div>
+    </div>
+</header>
+    <script src="app.js"></script>
+</body>
+</html>
