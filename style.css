@@ -163,18 +163,18 @@ header .master_play .wave .wave1{
    margin-right: 3px;
    border-radius: 10px 10px 0px 0px;
    background: #36e2ec;
-   /* animation: unset; */
-   animation: wave .5s linear infinite;
+   animation: unset;
+   
 }
 header .master_play .wave .wave1:nth-child(2){
    height: 13px;
    /* Bỏ */
-   animation-delay: .4s;
+   /* animation-delay: .4s; */
 }
 header .master_play .wave .wave1:nth-child(3){
    height: 8px;
    /* Bỏ */
-   animation-delay: .8s;
+   /* animation-delay: .8s; */
 }
 /* javascript class wave */
 header .master_play .active2 .wave1{ 
@@ -592,3 +592,7 @@ header .song_side .popular_artists .item li img{
    border-radius: 50%;
    position: relative;
 }
+/* Chức năng mode dark light*/
+
+   
+   
