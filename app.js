@@ -119,14 +119,13 @@ const makeAllPlays = () => {
     Array.from(document.getElementsByClassName('playListPlay')).forEach((element) => {
         element.classList.add('bx-play-circle');
         element.classList.remove('bx-pause-circle');
-    });
-};
+    })
+}
 const makeAllBackground = () => {
     Array.from(document.getElementsByClassName('songItem')).forEach((element) => {
-        element.style.background = "rgb(105,105,170,0)";
-        
-    });
-};
+        element.style.background = "rgb(105,105,170,0)";   
+    })
+}
 
 let index = 0;
 let poster_master_play = document.getElementById('poster_master_play');
@@ -143,23 +142,23 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
         music.play();
         let song_title = songs.filter((ele) => {
             return ele.id == index;
-        });
+        })
 
         song_title.forEach(ele => {
             let { songName } = ele;
             title.innerHTML = songName;
-        });
+        })
 
         masterPlay.classList.remove('bx-play');
         masterPlay.classList.add('bx-pause');
         wave.classList.add('active2');
-        music.addEventListener('ended',()=>{
-            masterPlay.classList.add('bx-play');
-            masterPlay.classList.remove('bx-pause');
-            wave.classList.remove('active2');
-        })
+        // music.addEventListener('ended',()=>{
+        //     masterPlay.classList.add('bx-play');
+        //     masterPlay.classList.remove('bx-pause');
+        //     wave.classList.remove('active2');
+        // })
         makeAllBackground();
-        Array.from(document.getElementsByClassName('songItem'))[`$/{index-1}`].style.background = "rgb(105,105,170,.1)";
+        Array.from(document.getElementsByClassName('songItem'))[`${index-1}`].style.background = "rgb(105,105,170,.1)";
     });
 });
 
@@ -203,8 +202,24 @@ music.addEventListener('ended', ()=>{
     masterPlay.classList.add('bx-pause');
     wave.classList.add('active2');
     index ++;
+    
     music.src = `audio/${index}.mp3`;
     poster_master_play.src = `Img/${index}.jpg`;
+    music.play();
+    let song_title = songs.filter((ele) => {
+        return ele.id == index;
+    })
+
+    song_title.forEach(ele => {
+        let { songName } = ele;
+        title.innerHTML = songName;
+    })
+    makeAllBackground();
+    
+    Array.from(document.getElementsByClassName('songItem'))[`${index-1}`].style.background = "rgb(105,105,170,.1)";
+    makeAllPlays();
+    document.getElementsByClassName('playListPlay')[index-1].classList.remove('bx-play-circle');
+    document.getElementsByClassName('playListPlay')[index-1].classList.add('bx-pause-circle');
 })
 
 
