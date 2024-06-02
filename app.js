@@ -431,3 +431,14 @@ left_scrolls.addEventListener('click', ()=> {
 right_scrolls.addEventListener('click', ()=> {
     item.scrollLeft += 330;
 })
+
+let left_scrollss = document.getElementById('left_scrollss');
+let right_scrollss = document.getElementById('right_scrollss');
+let pop_album = document.getElementsByClassName('pop_album')[0];
+
+left_scrollss.addEventListener('click', ()=> {
+    pop_album.scrollLeft -= 330;
+})
+right_scrollss.addEventListener('click', ()=> {
+    pop_album.scrollLeft += 330;
+})
