@@ -217,12 +217,31 @@ header .master_play .icon{
    font-size: 20px;
    color: #fff;
    margin: 0px 20px 0px 40px;
+   outline: none;
+   display: flex;
+   align-items: center;
 }
 header .master_play .icon .bx{
    cursor: pointer;
    outline: none;
 }
-header .master_play .icon .bx:nth-child(2){
+header .master_play .icon .shuffle{
+   font-size: 18px;
+   margin-right: 10px;
+   display: flex;
+   align-items: center;
+   width: 18px;
+   /* border: 1px solid #fff; */
+   overflow: hidden;
+}
+header .master_play .icon #download_music{
+   color: #fff;
+}
+header .master_play .icon #download_music .bx{
+   font-size: 20px;
+   margin-left: 10px;
+}
+header .master_play .icon .bx:nth-child(3){
    border: 1px solid rgb(105, 105, 170,.1);
    border-radius: 50%;
    padding: 1px 3px 0px 6px;

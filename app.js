@@ -3,7 +3,7 @@ const music = new Audio('audio.mp3');
 const songs = [
     {
         id: '1',
-        songName: 'Em Iu <br><div class="subtitle">Andree</div>',
+        songName: 'Em Iu<br><div class="subtitle">Andree</div>',
         poster: "Img/1.jpg"
     },
     {
@@ -129,6 +129,7 @@ const makeAllBackground = () => {
 
 let index = 0;
 let poster_master_play = document.getElementById('poster_master_play');
+let download_music = document.getElementById('download_music');
 let title = document.getElementById('title');
 
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element) => {
@@ -138,6 +139,7 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
         e.target.classList.remove('bx-play-circle');
         e.target.classList.add('bx-pause-circle');
         music.src = `audio/${index}.mp3`;
+        download_music.href = `audio/${index}.mp3`;
         poster_master_play.src = `Img/${index}.jpg`;
         music.play();
         let song_title = songs.filter((ele) => {
@@ -147,6 +149,7 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
         song_title.forEach(ele => {
             let { songName } = ele;
             title.innerHTML = songName;
+            download_music.setAttribute('download', songName);
         })
 
         masterPlay.classList.remove('bx-play');
@@ -196,14 +199,17 @@ music.addEventListener('timeupdate',()=>{
 seek.addEventListener('change',()=>{
     music.currentTime = seek.value *music.duration/100;
 })
-
-music.addEventListener('ended', ()=>{
+const next_music = () =>{
     // masterPlay.classList.add('bx-play');
     masterPlay.classList.add('bx-pause');
     wave.classList.add('active2');
+    if(index == songs.length){
+        index == 0;
+    }
     index ++;
     
     music.src = `audio/${index}.mp3`;
+    download_music.href = `audio/${index}.mp3`;
     poster_master_play.src = `Img/${index}.jpg`;
     music.play();
     let song_title = songs.filter((ele) => {
@@ -213,6 +219,7 @@ music.addEventListener('ended', ()=>{
     song_title.forEach(ele => {
         let { songName } = ele;
         title.innerHTML = songName;
+        download_music.setAttribute('download', songName);
     })
     makeAllBackground();
     
@@ -220,8 +227,104 @@ music.addEventListener('ended', ()=>{
     makeAllPlays();
     document.getElementsByClassName('playListPlay')[index-1].classList.remove('bx-play-circle');
     document.getElementsByClassName('playListPlay')[index-1].classList.add('bx-pause-circle');
-})
+}
 
+const repeat_music = () =>{
+    // masterPlay.classList.add('bx-play');
+    masterPlay.classList.add('bx-pause');
+    wave.classList.add('active2');
+    index;
+    
+    music.src = `audio/${index}.mp3`;
+    download_music.href = `audio/${index}.mp3`;
+    poster_master_play.src = `Img/${index}.jpg`;
+    music.play();
+    let song_title = songs.filter((ele) => {
+        return ele.id == index;
+    })
+
+    song_title.forEach(ele => {
+        let { songName } = ele;
+        title.innerHTML = songName;
+        download_music.setAttribute('download', songName);
+    })
+    makeAllBackground();
+    
+    Array.from(document.getElementsByClassName('songItem'))[`${index-1}`].style.background = "rgb(105,105,170,.1)";
+    makeAllPlays();
+    document.getElementsByClassName('playListPlay')[index-1].classList.remove('bx-play-circle');
+    document.getElementsByClassName('playListPlay')[index-1].classList.add('bx-pause-circle');
+}
+const random_music = () =>{
+    // masterPlay.classList.add('bx-play');
+    masterPlay.classList.add('bx-pause');
+    wave.classList.add('active2');
+    if(index == songs.length){
+        index == 0;
+    }
+    index= Math.floor((Math.random()*songs.length)+1);
+    
+    music.src = `audio/${index}.mp3`;
+    download_music.href = `audio/${index}.mp3`;
+    poster_master_play.src = `Img/${index}.jpg`;
+    music.play();
+    let song_title = songs.filter((ele) => {
+        return ele.id == index;
+    })
+
+    song_title.forEach(ele => {
+        let { songName } = ele;
+        title.innerHTML = songName;
+        download_music.setAttribute('download', songName);
+    })
+    makeAllBackground();
+    
+    Array.from(document.getElementsByClassName('songItem'))[`${index-1}`].style.background = "rgb(105,105,170,.1)";
+    makeAllPlays();
+    document.getElementsByClassName('playListPlay')[index-1].classList.remove('bx-play-circle');
+    document.getElementsByClassName('playListPlay')[index-1].classList.add('bx-pause-circle');
+}
+
+let shuffle = document.getElementsByClassName('shuffle')[0];
+shuffle.addEventListener('click', ()=>{
+    let a= shuffle.innerHTML;
+    switch(a){
+        case "next":
+            shuffle.classList.add('bx-repeat');
+            shuffle.classList.remove('bxs-music');
+            shuffle.classList.remove('bx-shuffle');
+            shuffle.innerHTML = "repeat";
+            break;
+        case "repeat":
+            shuffle.classList.remove('bx-repeat');
+            shuffle.classList.remove('bxs-music');
+            shuffle.classList.add('bx-shuffle');
+            shuffle.innerHTML = "random";
+            break;
+        case "random":
+            shuffle.classList.remove('bx-repeat');
+            shuffle.classList.add('bxs-music');
+            shuffle.classList.remove('bx-shuffle');
+            shuffle.innerHTML = "next";
+            break;
+    }
+});
+
+music.addEventListener('ended', ()=>{
+    let b = shuffle.innerHTML;
+
+    switch (b) {
+        case "repeat":
+            repeat_music();
+            break;
+        case "next":
+            next_music();
+            break;
+        case "random":
+            random_music();
+            break;
+    }
+})
 
 let vol_icon = document.getElementById('vol_icon');
 let vol = document.getElementById('vol');
@@ -260,6 +363,7 @@ back.addEventListener('click', ()=>{
         index = Array.from(document.getElementsByClassName('songItem')).length;
     }
     music.src = `audio/${index}.mp3`;
+    download_music.href = `audio/${index}.mp3`;
     poster_master_play.src = `Img/${index}.jpg`;
     music.play();
     let song_title = songs.filter((ele) => {
@@ -269,6 +373,7 @@ back.addEventListener('click', ()=>{
     song_title.forEach(ele => {
         let { songName } = ele;
         title.innerHTML = songName;
+        download_music.setAttribute('download', songName);
     });
     makeAllPlays()
     document.getElementById(`${index}`).classList.remove('bx-play');
@@ -284,6 +389,7 @@ next.addEventListener('click', ()=>{
         index = 1;    
     }
     music.src = `audio/${index}.mp3`;
+    download_music.href = `audio/${index}.mp3`;
     poster_master_play.src = `Img/${index}.jpg`;
     music.play();
     let song_title = songs.filter((ele) => {
@@ -293,8 +399,10 @@ next.addEventListener('click', ()=>{
     song_title.forEach(ele => {
         let { songName } = ele;
         title.innerHTML = songName;
+        download_music.setAttribute('download', songName);
     });
     makeAllPlays()
+
     document.getElementById(`${index}`).classList.remove('bx-play');
     document.getElementById(`${index}`).classList.add('bx-pause');
     makeAllBackground()
