@@ -331,7 +331,7 @@ header .master_play .vol input{
 header .master_play .vol .vol_bar{
    position: absolute;
    background: #36e2ec;
-   width: 0%;
+   width: 100%;
    height: 100%;
    top: 0;
    transition: 1s linear;
@@ -342,7 +342,7 @@ header .master_play .vol .dot{
    height: 5px;
    background: #36e2ec;
    border-radius: 50%;
-   left: 0%;
+   left: 100%;
    top: -1.5px;
    transition: 1s linear;
 }
@@ -668,6 +668,76 @@ header .song_side .popular_artists .item li img{
    position: relative;
 }
 /* Chức năng mode dark light*/
+label {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-   
+input {
+	position: absolute;
+	opacity: 0;
+}
+
+.sun {
+	position: absolute;
+	font-size: 1em;
+	color: #666;
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+	transform: scale(0);
+	transition: 1s ease;
+}
+
+input:checked ~ .sun {
+	transition-delay: 0.5s;
+	transform: scale(1) rotate(360deg);
+}
+
+.moon {
+	font-size: 1em;
+	color: #666;
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+	transition: 1s ease;
+	transition-delay: 0.5s;
+}
+
+input:checked ~ .moon {
+	transition-delay: 0s;
+	transform: rotate(360deg) scale(0);
+}
+
+.toggle {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+		inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+	z-index: -1;
+	transition: 0.75s;
+}
+
+input:checked ~ .toggle {
+	background: #f8f8f8;
+}
+
+.animateBg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #f8f8f8;
+	z-index: -2;
+	clip-path: circle(0% at 50% 50%);
+	transition: 1.5s ease-out;
+}
+
+input:checked ~ .animateBg {
+	clip-path: circle(150% at 50% 50%);
+}
+/* ***************** */
    

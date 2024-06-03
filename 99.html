@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="menu_side">
+        <h1>PlayList</h1>
+        <div class="playlist">
+            <h4 class="active"><span></span><i class='bx bxs-music'></i>Album 99%</h4>
+            <!-- <h4><span></span><i class='bx bxs-music'></i> Last Listening</h4>
+            <h4><span></span><i class='bx bxs-music'></i> Recommended</h4> -->
+        </div>
+        <div class="menu_song">
+            <li class="songIteam">
+                <span>01</span>
+                <img src="Img/99_img/1.jpg" alt="00">
+                <h5>
+                    00(Intro)
+                    <div class="subtitle">RPT MCK</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="1"></i>
+                
+            </li>
+            <li class="songIteam">
+                <span>02</span>
+                <img src="Img/99_img/2.jpg" alt="Chìm Sâu">
+                <h5>
+                    Chìm Sâu
+                    <div class="subtitle">RPT MCK</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="2"></i>
+                
+            </li>
+            <li class="songIteam">
+                <span>03</span>
+                <img src="Img/99_img/3.jpg" alt="Suit & Tie">
+                <h5>
+                    Suit & Tie
+                    <div class="subtitle">RPT MCK</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="3"></i>
+                
+            </li><li class="songIteam">
+                <span>04</span>
+                <img src="Img/99_img/4.jpg" alt="Em iu">
+                <h5>
+                    Va Vào Giai Điệu Này
+                    <div class="subtitle">RPT MCK</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="4"></i>
+                
+            </li><li class="songIteam">
+                <span>05</span>
+                <img src="Img/99_img/5.jpg" alt="Em iu">
+                <h5>
+                    Tối Nay Ta Đi Đâu Nhờ
+                    <div class="subtitle">RPT MCK</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="5"></i>
+                
+            </li><li class="songIteam">
+                <span>06</span>
+                <img src="Img/99_img/6.jpg" alt="Em iu">
+                <h5>
+                    Chỉ Một Đêm Nữa Thôi
+                    <div class="subtitle">RPT MCK</div>
+                </h5>
+                <i class='bx playListPlay bx-play-circle' id="6"></i>
+                
+            </li>
+        </div>
+    </div>
+
+    <div class="song_side">
+        <nav>
+            <ul>
+                <li><a href="index.html" style="text-decoration: none;color: inherit;">Discover</a></li>
+                <li>My Library</li>
+                <li>Home</li>
+            </ul>
+            <div class="search">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search Music...">
+            </div>
+            <!-- ==== -->
+            <div id="toggle">
+                <label>
+                    <input type="checkbox" id="theme-toggle" />
+                    <ion-icon name="sunny" class="sun"></ion-icon>
+                    <ion-icon name="moon" class="moon"></ion-icon>
+                    <span class="toggle"></span>
+                    <span class="animateBg"></span>
+                </label>
+                <script
+                    type="module"
+                    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+                ></script>
+                <script
+                    nomodule
+                    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+                ></script>
+                
+            </div>
+            
+           
+            <!-- ===== -->
+            <div class="user">
+                <img src="Img/1.jpg" alt="User" title="User">
+            </div>
+        </nav>
+        
+        <div class="popular_song">
+            <div class="h4">
+                <h4>
+                    Album 99% 
+                </h4>
+                <div class="btn_s">
+                    <i id="left_scroll" class='bx bx-left-arrow-alt'></i>
+                    <i id="right_scroll" class='bx bx-right-arrow-alt' ></i>
+                </div>
+            </div>
+            <div class="pop_song">
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/7.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="7"></i>
+                    </div>
+                    <h5>
+                        Thôi Em Đừng Đi<br>
+                        <!-- <div class="subtitle">Rhyder x Ban x Coolkid</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/8.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="8"></i>
+                    </div>
+                    <h5>
+                        50/50<br>
+                        <!-- <div class="subtitle">Obito</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/9.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="9"></i>
+                    </div>
+                    <h5>
+                        Cuốn Cho Anh Một Điếu Nữa Đi<br>
+                        <!-- <div class="subtitle">BIGDADDY x Emily</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/10.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="10"></i>
+                    </div>
+                    <h5>
+                        Show Me Love<br>
+                        <!-- <div class="subtitle">Mike</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/11.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="11"></i>
+                    </div>
+                    <h5>
+                        Tại Vì Sao<br>
+                        <!-- <div class="subtitle">Obito</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/12.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="12"></i>
+                    </div>
+                    <h5>
+                        Thờ Er<br>
+                        <!-- <div class="subtitle">Vsoul x </div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/13.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="13"></i>
+                    </div>
+                    <h5>
+                        Ai Mới Là Kẻ Xấu Xa<br>
+                        <!-- <div class="subtitle">Đen Vâu</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/14.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="14"></i>
+                    </div>
+                    <h5>
+                        Anh Đã Ổn Hơn<br>
+                        <!-- <div class="subtitle">Đen Vâu</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/15.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="15"></i>
+                    </div>
+                    <h5>
+                        Badtrip<br>
+                        <!-- <div class="subtitle">Đen Vâu</div> -->
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="Img/99_img/16.jpg" alt="">
+                        <i class='bx playListPlay bx-play-circle' id="16"></i>
+                    </div>
+                    <h5>
+                        99<br>
+                        <!-- <div class="subtitle">Đen Vâu</div> -->
+                    </h5>
+                </li>
+               
+            </div>
+        </div>
+        <div class="popular_artists">
+            <div class="h4">
+                <h4>
+                    Popular Artists
+                </h4>
+                <div class="btn_s">
+                    <i id="left_scrolls" class='bx bx-left-arrow-alt'></i>
+                    <i id="right_scrolls" class='bx bx-right-arrow-alt' ></i>
+                </div>
+            </div>
+            <div class="item">
+                <li>
+                    <img src="Img/sontung2.jpg" alt="Son Tung" title="Sơn Tùng MTP">
+                </li>
+                <li>
+                    <img src="Img/GreyD.jpg" alt="Grey D" title="Grey D">
+                </li>
+                <li>
+                    <img src="Img/evans.jpg" alt="Wren Evans" title="Wren Evans">
+                </li>
+                <li>
+                    <img src="Img/wn.jpg" alt="WN" title="W/N">
+                </li>
+                <li>
+                    <img src="Img/hieuthuhai.webp" alt="HIEUTHUHAI" title="HIEUTHUHAI">
+                </li>
+                <li>
+                    <img src="Img/vu.jpg" alt="Vũ" title="Vũ">
+                </li>
+                <li>
+                    <img src="Img/mck.jpg" alt="RPT MCK" title="MCK">
+                </li>
+                <li>
+                    <img src="Img/tlinh.jpg" alt="TLinh" title="TLinh">
+                </li>
+                <li>
+                    <img src="Img/denvau.jpg" alt="Den Vau" title="Đen Vâu">
+                </li>
+                <li>
+                    <img src="Img/obito.webp" alt="OBito" title="Obito">
+                </li>
+                <li>
+                    <img src="Img/lowG.jpg" alt="Low G" title="Low G">
+                </li>
+                <li>
+                    <img src="Img/amee.jpg" alt="Amee" title="Amee">
+                </li>
+                <li>
+                    <img src="Img/wrxdie.jpg" alt="Wrxdie" title="Wrxdie">
+                </li>
+            </div>
+            </div>
+            <div class="popular_song">
+                <div class="h4">
+                    <h4>
+                        Popular Album
+                    </h4>
+                    <div class="btn_s">
+                        <i id="left_scrollss" class='bx bx-left-arrow-alt'></i>
+                        <i id="right_scrollss" class='bx bx-right-arrow-alt' ></i>
+                    </div>
+                </div>
+                <div class="pop_album">
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab1.jpg" alt="">
+                            
+                        </div>
+                        <h5>
+                            99% - MCK<br>
+                            <!-- <div class="subtitle">Rhyder x Ban x Coolkid</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab2.jpg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="8"></i> -->
+                        </div>
+                        <h5>
+                            Vũ Trụ Cò Bay<br>
+                            <!-- <div class="subtitle">Phương Mỹ Chi</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab3.jpg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="9"></i> -->
+                        </div>
+                        <h5>
+                            Minh Tinh<br>
+                            <!-- <div class="subtitle">BIGDADDY x Emily</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab4.jpg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="10"></i> -->
+                        </div>
+                        <h5>
+                            Ái - Tlinh<br>
+                            <!-- <div class="subtitle">Mike</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/11.jpg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="11"></i> -->
+                        </div>
+                        <h5>
+                            Đánh Đổi<br>
+                            <!-- <div class="subtitle">Obito</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab.webp" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="12"></i> -->
+                        </div>
+                        <h5>
+                            Ai Cũng Phải Bắt Đầu Từ Đâu Đó<br>
+                            <!-- <div class="subtitle">Vsoul x </div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <a href="loichoi.html"><img src="Img/ab5.avif" alt=""></a>
+                            <!-- <i class='bx playListPlay bx-play-circle' id="13"></i> -->
+                        </div>
+                        <h5>
+                            Loi Choi<br>
+                            <!-- <div class="subtitle">Đen Vâu</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab6.jpg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="14"></i> -->
+                        </div>
+                        <h5>
+                            m-tp MTP<br>
+                            <!-- <div class="subtitle">Đen Vâu</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab7.jpeg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="15"></i> -->
+                        </div>
+                        <h5>
+                            dreAMEE<br>
+                            <!-- <div class="subtitle">Đen Vâu</div> -->
+                        </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="Img/ab8.jpg" alt="">
+                            <!-- <i class='bx playListPlay bx-play-circle' id="16"></i> -->
+                        </div>
+                        <h5>
+                            GOLDEN<br>
+                            <!-- <div class="subtitle">Đen Vâu</div> -->
+                        </h5>
+                    </li>
+                    
+                </div>
+            </div>
+    </div>
+
+
+    <div class="master_play">
+        <div class="wave">
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+        </div>
+        <img src="Img/99_img/1.jpg" alt="" id="poster_master_play">
+        <h5 id="title">
+            00(Intro)<br>
+            <div class="subtitle">RPT MCK</div>
+        </h5>
+        <div class="icon">
+            <i class='bx shuffle bxs-music'>next</i>
+            <i class='bx bx-skip-previous' id="back"></i>
+            <i class='bx bx-play' id="masterPlay"></i>
+            <i class='bx bx-skip-next' id="next"></i>
+            <a href="" id="download_music" download><i class='bx bxs-download'></i></a>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+            <input type="range" id="seek" min="0" value="0" max="1:00">
+            <div class="bar2" id="bar2"></div>
+            <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:00</span>
+
+        <div class="vol">
+            <i class='bx bxs-volume-full' id="vol_icon"></i>
+            <input type="range" id="vol" min="0" value="0" max="1:00">
+            <div class="vol_bar"></div>
+            <div class="dot" id="vol_dot"></div>
+        </div>
+    </div>
+</header>
+    <script src="99.js"></script>
+</body>
+</html>
