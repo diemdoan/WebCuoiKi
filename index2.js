@@ -91,6 +91,57 @@ const songs = [
         songName: 'Cho Mình Em<br><div class="subtitle">Binz x Đen</div>',
         poster: "Img/18.jpg"
     },
+    {
+        id: '19',
+        songName: 'Thôi Em Đừng Đi<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/7.jpg"
+    },
+    {
+        id: '20',
+        songName: '50/50<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/8.jpg"
+    },
+    {
+        id: '21',
+        songName: 'Cuốn Cho Anh Một Điếu<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/9.jpg"
+    },
+    {
+        id: '22',
+        songName: 'Show Me Love<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/10.jpg"
+    },
+    {
+        id: '23',
+        songName: 'Tại Vì Sao<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/11.jpg"
+    },
+    {
+        id: '24',
+        songName: 'Thờ Er<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/12.jpg"
+    },
+    {
+        id: '25',
+        songName: 'Ai Mới Là Kẻ Xấu Xa<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/13.jpg"
+    },
+    {
+        id: '26',
+        songName: 'Anh Đã Ổn Hơn<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/14.jpg"
+    },
+    {
+        id: '27',
+        songName: 'Badtrip<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/15.jpg"
+    },
+    {
+        id: '28',
+        songName: '99<br><div class="subtitle">RPT MCK</div>',
+        poster: "Img/99_img/16.jpg"
+    },
+    
 ];
 
 Array.from(document.getElementsByClassName('songName')).forEach((element, i) => {
@@ -423,7 +474,7 @@ right_scroll.addEventListener('click', ()=> {
 
 let left_scrolls = document.getElementById('left_scrolls');
 let right_scrolls = document.getElementById('right_scrolls');
-let item = document.getElementsByClassName('item')[0];
+let item = document.getElementsByClassName('pop_song2')[0];
 
 left_scrolls.addEventListener('click', ()=> {
     item.scrollLeft -= 330;

@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music App</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 
 <body>
 <header>
     <div class="menu_side">
+        <h6 id="menu_list_active_button"><i class='bx bxs-playlist'></i></h6>
         <h1>PlayList</h1>
         <div class="playlist">
             <h4 class="active"><span></span><i class='bx bxs-music'></i>Ranking</h4>
@@ -83,37 +85,20 @@
         <nav>
             <ul>
                 <li>Discover<span></span></li>
-                <li>My Library</li>
+                <a href="index2.html" style="text-decoration: none;"><li style="color:#777676">My Library</li></a>
                 <li>Home</li>
             </ul>
             <div class="search">
                 <i class='bx bx-search'></i>
                 <input type="text" placeholder="Search Music...">
-            </div>
-            <!-- ==== -->
-            <div id="toggle">
-                <label>
-                    <input type="checkbox" id="theme-toggle" />
-                    <ion-icon name="sunny" class="sun"></ion-icon>
-                    <ion-icon name="moon" class="moon"></ion-icon>
-                    <span class="toggle"></span>
-                    <span class="animateBg"></span>
-                </label>
-                <script
-                    type="module"
-                    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-                ></script>
-                <script
-                    nomodule
-                    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-                ></script>
                 
             </div>
+            <!-- ==== -->
             
            
             <!-- ===== -->
             <div class="user">
-                <img src="Img/1.jpg" alt="User" title="User">
+                <a href="login.html"><img src="Img/1.jpg" alt="User" title="User"></a>
             </div>
         </nav>
         
@@ -424,10 +409,10 @@
             <div class="wave1"></div>
             <div class="wave1"></div>
         </div>
-        <img src="Img/3.jpg" alt="" id="poster_master_play">
+        <img src="Img/1.jpg" alt="" id="poster_master_play">
         <h5 id="title">
-            Dù Con Đã Khôn Lớn<br>
-            <div class="subtitle">Yuno BigBoi x Tổng Đài</div>
+            Em iu<br>
+            <div class="subtitle">Andree</div>
         </h5>
         <div class="icon">
             <i class='bx shuffle bxs-music'>next</i>
@@ -453,5 +438,26 @@
     </div>
 </header>
     <script src="app.js"></script>
+    <script>
+       let menu_list_active_button = document.getElementById('menu_list_active_button');
+let menu_side = document.getElementsByClassName('menu_side')[0];
+let song_side = document.getElementsByClassName('song_side')[0];
+
+let menuIsOpen = false; // Biến trạng thái để theo dõi trạng thái của menu
+
+menu_list_active_button.addEventListener('click', () => {
+    menu_side.style.transform = "unset";
+    menu_list_active_button.style.opacity = 0;
+    menuIsOpen = true; // Cập nhật trạng thái menu đã mở
+});
+
+song_side.addEventListener('click', () => {
+    if (menuIsOpen) { // Chỉ cho phép click nếu menu đã mở
+        menu_side.style.transform = "translateX(-100%)";
+        menu_list_active_button.style.opacity = 1;
+        menuIsOpen = false; // Cập nhật trạng thái menu đã đóng
+    }
+});
+    </script>
 </body>
 </html>
