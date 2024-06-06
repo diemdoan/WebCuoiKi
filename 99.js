@@ -433,3 +433,95 @@ left_scrollss.addEventListener('click', ()=> {
 right_scrollss.addEventListener('click', ()=> {
     pop_album.scrollLeft += 330;
 })
+
+let lightMode = document.getElementById('light-mode');
+let darkMode = document.getElementById('dark-mode');
+
+darkMode.addEventListener('click', () => {
+  document.body.classList.add('light-mode');
+  darkMode.style.display = 'none';
+  lightMode.style.display = 'block';
+  
+
+  lightMode.classList.add('rotate');
+  setTimeout(() => {
+    lightMode.classList.remove('rotate');
+  }, 500);
+});
+
+lightMode.addEventListener('click', () => {
+  document.body.classList.remove('light-mode');
+  darkMode.style.display = 'block';
+  lightMode.style.display = 'none';
+  
+  // Thêm lớp rotate và xóa sau khi animation kết thúc
+  darkMode.classList.add('rotate');
+  setTimeout(() => {
+    darkMode.classList.remove('rotate');
+  }, 500);
+});
+let search_result = document.getElementsByClassName('search_result')[0];
+
+songs.forEach(element =>{
+    const {id, songName, poster} = element;
+    let card = document.createElement('a');
+    card.classList.add('card');
+    card.href = '#' + id;
+    card.innerHTML = `
+    <img src="${poster}" alt="">
+    <div class="content_1">
+          ${songName}
+    </div>
+    `;
+    card.addEventListener('click', ()=> {
+        index = id; // Cập nhật index bằng id của bài hát được chọn
+        music.src = `audio/99_audio/${id}.mp3`;
+        download_music.href = `audio/99_audio/${id}.mp3`;
+        poster_master_play.src = `Img/99_img/${id}.jpg`;
+        music.play();
+        let song_title = songs.filter((ele) => {
+            return ele.id == id;
+        });
+    
+        song_title.forEach(ele => {
+            let { songName } = ele;
+            title.innerHTML = songName;
+            download_music.setAttribute('download', songName);
+        });
+    
+        makeAllPlays();
+        document.getElementById(`${id}`).classList.remove('bx-play-circle');
+        document.getElementById(`${id}`).classList.add('bx-pause-circle');
+        wave.classList.add('active2');
+    
+        masterPlay.classList.remove('bx-play');
+        masterPlay.classList.add('bx-pause');
+        wave.classList.add('active2');
+    });
+    search_result.appendChild(card);
+});
+
+let input = document.getElementsByTagName('input')[0];
+
+input.addEventListener('keyup', ()=>{
+    let input_value = input.value.toUpperCase();
+    let items = search_result.getElementsByTagName('a');
+
+    for (let i = 0; i < items.length; i++) {
+        let as = items[i].getElementsByClassName('content_1')[0];
+        let text_value = as.textContent || as.innerText;
+
+        if (text_value.toUpperCase().indexOf(input_value) > -1) {
+            items[i].style.display = "flex";
+        } else{
+            items[i].style.display = "none";
+        }
+        if (input_value == "") {
+            search_result.style.display="none";
+        } else{
+            search_result.style.display="";
+        }
+        
+    }
+})
+

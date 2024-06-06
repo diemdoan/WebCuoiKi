@@ -436,6 +436,61 @@ header .song_side nav .search input{
    color: #fff;
    font-size: 12px;
 }
+header .song_side nav .search .search_result{
+   z-index: 1;
+   position: absolute;
+   width: 100%;
+   height: 200px;
+   /* border: 1px solid #fff; */
+   margin-top: 10px;
+   border-radius: 10px;
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-direction: column;
+   overflow: auto;
+}
+header .song_side nav .search .search_result::-webkit-scrollbar{
+   display: none;
+}
+header .song_side nav .search .search_result .card{
+   width: 100%;
+   min-height: 45px;
+   /* border: 1px solid #fff; */
+   display: none;
+   align-items: center;
+   padding: 0px 5px;
+   text-decoration: none;
+   background: #464646;
+   margin-bottom: 5px;
+   
+}
+header .song_side nav .search .search_result .card img{
+   width: 35px;
+   height: 35px;
+   border-radius: 5px;
+   margin-right: 10px;
+}
+header .song_side nav .search .search_result .card .content_1{
+   width: 80%;
+   height: 100%;
+   /* border: 1px solid #fff; */
+   padding: 0;
+   font-size: 13px;
+   font-weight: 600;
+   color: #fff;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+}
+header .song_side nav .search .search_result .card .content_1 .subtitle{
+   font-size: 11px;
+   color: #a4a8b8;
+   font-weight: 500;
+
+
+}
 
 header .song_side nav .user{
    position: relative;
@@ -673,6 +728,122 @@ header .song_side .popular_artists .item li img{
    position: relative;
 }
 /* Chức năng mode dark light*/
+header .song_side nav .theme-switch {
+   display: flex;
+   align-items: center;
+   margin-right: 20px;
+ }
+ 
+ header .song_side nav .theme-switch i {
+   font-size: 20px;
+   cursor: pointer;
+   transition: .3s linear;
+   color: #a4a6a4;
+ }
+ 
+ header .song_side nav .theme-switch i:hover {
+   color: #fff;
+ }
+ 
 
+header .song_side nav .theme-switch #light-mode {
+   display: none;
+ }
+ 
+ header .song_side nav .theme-switch #dark-mode {
+   display: block;
+ }
+ 
+ /* Light mode styles */
+ body.light-mode header .song_side nav .theme-switch #light-mode {
+   display: block;
+ }
+ 
+ body.light-mode header .song_side nav .theme-switch #dark-mode {
+   display: none;
+ }
+ /* Hiếu ứng xoay */
+@keyframes rotate {
+   from {
+     transform: rotate(0deg);
+   }
+   to {
+     transform: rotate(360deg);
+   }
+ }
+ 
+ header .song_side nav .theme-switch i {
+   font-size: 20px;
+   cursor: pointer;
+   transition: .3s linear;
+   color: #a4a6a4;
+ }
+ 
+ header .song_side nav .theme-switch i:hover {
+   color: #fff;
+ }
+ 
+ header .song_side nav .theme-switch i.rotate {
+   animation: rotate 0.5s linear;
+ }
+ 
+
+header .song_side nav .theme-switch #light-mode {
+   display: none;
+ }
+ 
+ header .song_side nav .theme-switch #dark-mode {
+   display: block;
+ }
+
+ body.light-mode header .song_side nav .theme-switch #light-mode {
+   display: block;
+ }
+ 
+ body.light-mode header .song_side nav .theme-switch #dark-mode {
+   display: none;
+ }
+
+ body.light-mode {
+   background-color: #f0f0f0;
+ }
+ 
+ body.light-mode header .menu_side,
+ body.light-mode header .master_play {
+   background-color: #e0e0e0;
+   box-shadow: 5px 0px 2px #d0d0d0;
+ }
+ 
+ body.light-mode header .song_side {
+   background: #f0f0f0;
+ }
+ body.light-mode header .master_play {
+   background-color: #999999;
+   box-shadow: 5px 0px 2px #d0d0d0;
+ }
+ body.light-mode header .master_play i{
+   color: #333;
+ }
+ body.light-mode header .master_play .vol .bx{
+   color: #333;
+}
+ 
+ body.light-mode header .menu_side h1,
+ body.light-mode header .menu_side .playlist h4,
+ body.light-mode header .menu_side .menu_song li h5,
+ body.light-mode header .menu_side .menu_song li i,
+ body.light-mode header .master_play h5,
+ body.light-mode header .master_play .icon,
+ body.light-mode header .master_play span,
+ body.light-mode header .song_side nav ul li,
+ body.light-mode header .song_side h5,
+ body.light-mode header .song_side h4,
+ body.light-mode header .song_side .content h1,
+ body.light-mode header .song_side .content p {
+   color: #333;
+ } 
+ body.light-mode header .song_side nav .search{
+   background: #b5b5b7;
+ }
 /* ***************** */
    

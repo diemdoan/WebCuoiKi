@@ -40,6 +40,9 @@
             </div>
           </nav>
         </div>
+        <div class="mode-switch">
+            <i class='bx bx-sun' id="theme-toggle"></i>
+          </div>
       </header>
 
     <!-- end -->
@@ -435,7 +438,23 @@
     </section>
 
     <!-- end -->
-
+    <div class="fb-comments" data-href="http://127.0.0.1:5500/Web_Cuoi_Ky/home.html" data-width="100%" data-numposts="100"></div>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1818848021950170',
+            xfbml     : true,
+            version   : 'v20.0'
+          });
+        };
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/vi_VN/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+        </script>
     <!-- contact -->
 
     <section class="contact" id="contact">

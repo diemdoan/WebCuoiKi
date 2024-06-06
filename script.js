@@ -36,3 +36,34 @@ $(document).ready(function(){
     });
 
 });
+// Light/Dark mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check if user's preference is stored
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+// Set initial mode
+if (isDarkMode) {
+  body.classList.add('dark-mode');
+  themeToggle.classList.remove('bx-sun');
+  themeToggle.classList.add('bx-moon');
+}
+
+// Toggle mode on click
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const isDark = body.classList.contains('dark-mode');
+  
+  // Update icon
+  if (isDark) {
+    themeToggle.classList.remove('bx-sun');
+    themeToggle.classList.add('bx-moon');
+  } else {
+    themeToggle.classList.remove('bx-moon');
+    themeToggle.classList.add('bx-sun');
+  }
+  
+  // Save user's preference
+  localStorage.setItem('darkMode', isDark);
+});
