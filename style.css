@@ -276,7 +276,7 @@ header .master_play .bar .bar2{
    width: 0%;
    height: 100%;
    top: 0;
-   transition: 1s linear;
+   transition: .5s linear;
 }
 header .master_play .bar .dot{
    position: absolute;
@@ -286,7 +286,7 @@ header .master_play .bar .dot{
    border-radius: 50%;
    left: 0%;
    top: -1.5px;
-   transition: 1s linear;
+   transition: .5s linear;
 }
 header .master_play .bar .dot::before{
    content: '';
@@ -306,7 +306,7 @@ header .master_play .bar input{
    left: 0;
    cursor: pointer;
    z-index: 9999999;
-   transition: 3s linear;
+   transition: .5s linear;
    opacity: 0;
 }
 header .master_play .vol{
@@ -329,7 +329,7 @@ header .master_play .vol input{
    left: 0;
    cursor: pointer;
    z-index: 9999999;
-   transition: 3s linear;
+   transition: .5s linear;
    opacity: 0;
 }
 header .master_play .vol .vol_bar{
@@ -338,7 +338,7 @@ header .master_play .vol .vol_bar{
    width: 100%;
    height: 100%;
    top: 0;
-   transition: 1s linear;
+   transition: .5s linear;
 }
 header .master_play .vol .dot{
    position: absolute;
@@ -348,7 +348,7 @@ header .master_play .vol .dot{
    border-radius: 50%;
    left: 100%;
    top: -1.5px;
-   transition: 1s linear;
+   transition: .5s linear;
 }
 header .master_play .vol .dot::before{
    content: '';
@@ -844,6 +844,9 @@ header .song_side nav .theme-switch #light-mode {
  } 
  body.light-mode header .song_side nav .search{
    background: #b5b5b7;
+ }
+ body.light-mode header .master_play .icon::before{
+   background: #fff;
  }
 /* ***************** */
    

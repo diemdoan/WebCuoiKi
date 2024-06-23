@@ -166,7 +166,8 @@ header .song_side nav ul li span{
 }
 header .song_side nav .search{
   position: relative;
-  width: 40%;
+  width: 60%;
+  height: 40px;
   padding: 1px 10px;
   border-radius: 20px;
   color: rgb(28, 27, 27);
@@ -183,7 +184,7 @@ header .song_side nav .search::before{
 }
 header .song_side nav .search .bx{
   font-size: 20px;
-  padding: 20px 0px 0px 10px;
+  padding: 10px 0px 0px 10px;
 }
 header .song_side nav .search input{
   background: none;
@@ -212,7 +213,7 @@ header .song_side nav .user img{
 #menu{
   font-size: 2.5rem;
   cursor: pointer;
-  color: #fff;
+  color: #000000;
   display: none;
 }
 
@@ -754,7 +755,7 @@ header .menu_side h6 {
   #menu {
     font-size: 2.5rem;
     cursor: pointer;
-    color: #fff;
+    color: #000000;
     display: inline-block;
   }
 
@@ -891,6 +892,9 @@ body.dark-mode {
 }
 .dark-mode .about .row .content p{
   color: #fff;
+}
+.dark-mode #menu{
+  color: #ffffff;
 }
 .dark-mode .about ul li{
   color: var(--primary-color);

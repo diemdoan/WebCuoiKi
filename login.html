@@ -30,13 +30,13 @@
                     <label for="">password</label>
                 </div>
                 <div class="form-group">
-                    <input type="password" required>
+                    <input type="password" class="confirm-password" required>
                     <i class="fas fa-lock"></i>
                     <label for="">confirm password</label>
                 </div>
                 <button type="submit" class="btn">sign up</button>
                 <div class="link">
-                    <p>You already have an account?<a href="#" class="signin-link"> sign in</a></p>
+                    <p>You already have an account?<a href="#" class="signin-link"> login</a></p>
                 </div>
             </form>
         </div>
@@ -56,7 +56,7 @@
                 <div class="forgot-pass">
                     <a href="#">forgot password?</a>
                 </div>
-                <button type="submit" class="btn"><a href="home.html" style="text-decoration: none;color: inherit;">login</a></button>
+                <button type="submit" class="btn">login</button>
                 <div class="link">
                     <p>Don't have an account?<a href="#" class="signup-link"> sign up</a></p>
                 </div>
@@ -64,86 +64,96 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>
-    <script>
-        let wrapper = document.querySelector('.wrapper');
-let signUpLink = document.querySelector('.link .signup-link');
-let signInLink = document.querySelector('.link .signin-link');
-let signUpForm = document.querySelector('.sign-up form');
-let signInForm = document.querySelector('.sign-in form');
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() {
+    let wrapper = document.querySelector('.wrapper');
+    let signUpLink = document.querySelector('.link .signup-link');
+    let signInLink = document.querySelector('.link .signin-link');
+    let signUpForm = document.querySelector('.sign-up form');
+    let signInForm = document.querySelector('.sign-in form');
 
-signUpLink.addEventListener('click', () => {
-    wrapper.classList.add('animated-signin');
-    wrapper.classList.remove('animated-signup');
-});
+    const adminUsername = 'admin123';
+    const adminPassword = '123456';
 
-signInLink.addEventListener('click', () => {
-    wrapper.classList.add('animated-signup');
-    wrapper.classList.remove('animated-signin');
-});
-
-signUpForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let usernameInput = signUpForm.querySelector('input[type="text"]');
-    let emailInput = signUpForm.querySelector('input[type="email"]');
-    let passwordInput = signUpForm.querySelector('input[type="password"]:nth-of-type(1)');
-    let confirmPasswordInput = signUpForm.querySelector('input[type="password"]:nth-of-type(2)');
-
-    // Kiểm tra username
-    if (usernameInput.value.length < 4) {
-        alert('Username must be at least 4 characters long.');
-        return;
+    if (signUpLink) {
+        signUpLink.addEventListener('click', () => {
+            wrapper.classList.add('animated-signin');
+            wrapper.classList.remove('animated-signup');
+        });
     }
 
-    // Kiểm tra email
-    if (!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-        alert('Invalid email format.');
-        return;
+    if (signInLink) {
+        signInLink.addEventListener('click', () => {
+            wrapper.classList.add('animated-signup');
+            wrapper.classList.remove('animated-signin');
+        });
     }
 
-    // Kiểm tra mật khẩu
-    if (passwordInput.value.length < 6) {
-        alert('Password must be at least 6 characters long.');
-        return;
+    if (signUpForm) {
+        signUpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let usernameInput = signUpForm.querySelector('input[type="text"]');
+            let emailInput = signUpForm.querySelector('input[type="email"]');
+            let passwordInput = signUpForm.querySelector('input[type="password"]:nth-of-type(1)');
+            let confirmPasswordInput = signUpForm.querySelector('.confirm-password');
+
+            if (usernameInput.value.length < 6) {
+                alert('Username must be at least 6 characters long.');
+                return;
+            }
+
+            if (!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                alert('Invalid email format.');
+                return;
+            }
+
+            if (passwordInput.value.length < 4) {
+                alert('Password must be at least 4 characters long.');
+                return;
+            }
+
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            alert('Sign up successful!');
+            
+            
+            wrapper.classList.remove('animated-signin');
+            wrapper.classList.add('animated-signup');
+            
+            usernameInput.value = '';
+            emailInput.value = '';
+            passwordInput.value = '';
+            confirmPasswordInput.value = '';
+        });
     }
 
-    // Kiểm tra xác nhận mật khẩu
-    if (passwordInput.value !== confirmPasswordInput.value) {
-        alert('Passwords do not match.');
-        return;
+    if (signInForm) {
+        signInForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let usernameInput = signInForm.querySelector('input[type="text"]');
+            let passwordInput = signInForm.querySelector('input[type="password"]');
+
+            if (usernameInput.value.length < 6) {
+                alert('Username must be at least 6 characters long.');
+                return;
+            }
+
+            if (passwordInput.value.length < 4) {
+                alert('Password must be at least 4 characters long.');
+                return;
+            }
+
+            if (usernameInput.value === adminUsername && passwordInput.value === adminPassword) {
+                alert('Login successful!');
+                window.location.href = 'home.html';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
     }
-
-    // Nếu tất cả các kiểm tra đều đạt, cho phép submit form
-    alert('Registration successful!');
-    signUpForm.submit();
-});
-
-signInForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let usernameInput = signInForm.querySelector('input[type="text"]');
-    let passwordInput = signInForm.querySelector('input[type="password"]');
-
-    // Kiểm tra username
-    if (usernameInput.value.length < 4) {
-        alert('Username must be at least 4 characters long.');
-        return;
-    }
-
-    // Kiểm tra mật khẩu
-    if (passwordInput.value.length < 6) {
-        alert('Password must be at least 6 characters long.');
-        return;
-    }
-    // Kiểm tra xác nhận mật khẩu
-    if (passwordInput.value !== confirmPasswordInput.value) {
-        alert('Passwords do not match. Please try again.');
-        return;
-    }
-
-    // Thực hiện các kiểm tra đăng nhập tại đây
-    // Ví dụ: Gửi yêu cầu đăng nhập lên server và kiểm tra kết quả
-    // Nếu đăng nhập thành công, cho phép submit form
-    alert('Login successful!');
-    signInForm.submit();
 });
     </script>
 </body>
